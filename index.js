@@ -18,18 +18,13 @@ module.exports = function markdownItImageSize(md, { lazy = true, caption = true 
     const titleIndex = token.attrIndex('title');
     if (titleIndex >= 0) {
       const [title, size] = token.attrs[titleIndex][1].split('=');
-      const [width, height] = size ? size.split('x').map(v => v.trim()).filter(Boolean) : [];
-      if (title) {
-        token.attrs.splice(titleIndex, 1,
-          ...typeof caption !== 'boolean' && title ? [['title', title]] : [],
-        );
-      }
-      if (width) {
-        token.attrs.push(
-          ...width ? [['width', width]] : [],
-          ...height ? [['height', height]] : [],
-        );
-      }
+      const [width, height] = size ? size.split('x').map(v => v.trim()) : [];
+
+      token.attrs.splice(titleIndex, 1,
+        ...typeof caption !== 'boolean' && title ? [['title', title]] : [],
+        ...width ? [['width', width]] : [],
+        ...height ? [['height', height]] : [],
+      );
 
       if (caption && title) return `<figure>${slf.renderToken(tokens, idx, options)}<figcaption>${title}</figcaption></figure>`;
     }
