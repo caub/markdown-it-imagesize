@@ -1,0 +1,25 @@
+{
+
+  "name": "markdown-it-imagination",
+  "description": "Plugin for markdown-it image size support",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caub/markdown-it-imagesize.git"
+  },
+  "keywords": ["markdown-it", "image", "size", "width", "height", "img", "figure", "figcaption", "loading", "lazy"],
+  "author": "caub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caub/markdown-it-imagesize/issues"
+  },
+  "homepage": "https://github.com/caub/markdown-it-imagesize#readme",
+  "scripts": {
+    "test": "eslint . && node index.test.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "markdown-it": "^13.0.1"
+  }
+}

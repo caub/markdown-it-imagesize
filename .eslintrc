@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "node": true,
+    "es2021": true,
+  },
+  "rules": {
+    "no-restricted-globals": ["error", "event"],
+    "space-infix-ops": "error",
+    "object-curly-spacing": ["error", "always"],
+    "no-empty": "warn",
+    "no-console": ["warn", { "allow": ["error"] }],
+    "no-irregular-whitespace": "warn",
+    "indent": ["warn", 2, {"SwitchCase": 1}],
+    "linebreak-style": ["warn", "unix"],
+    "quotes": ["warn", "single", { "allowTemplateLiterals": true, "avoidEscape": true }],
+    "require-atomic-updates": "warn",
+    "no-return-await": "error",
+    "no-sequences": "error",
+    "no-unused-expressions": "error",
+    "arrow-spacing": "error",
+    "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
+    "no-multiple-empty-lines": ["warn", { "max": 2 }],
+    "max-len": ["warn", 160],
+  }
+}
